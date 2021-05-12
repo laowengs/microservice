@@ -1,0 +1,41 @@
+server:
+  port: 8080 #指定运行端口
+logging:
+  path: logs
+  file: logs/${spring.cloud.client.ip-address}/hystrix-client.log
+  level:
+    root: INFO
+spring:
+  application:
+    name: hystrix-dashboard #指定服务名称
+  thymeleaf:
+    enabled: true
+    cache: true
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    check-template-location: true
+    mode: HTML
+    suffix: .html
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.ip-address}  #指定主机地址
+    instance-id:  ${spring.cloud.client.ip-address} :${server.port}
+    prefer-ip-address: true
+  client:
+    fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
+    register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
+    service-url:
+      defaultZone: http://wengjp:wengjp123@134.175.56.208:9001/eureka,http://wengjp:wengjp123@134.175.56.208:9002/eureka,http://wengjp:wengjp123@134.175.56.208:9003/eureka
+turbine:
+  app-config: EUREKA-CLIENT
+  cluster-name-expression: new String('default') #指定服务所属集群
+  combine-host-port: true #以主机名和端口号来区分服务
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+  endpoint:
+    health:
+      show-details: always
