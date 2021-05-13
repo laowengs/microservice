@@ -1,10 +1,11 @@
 server:
   port: 8080 #指定运行端口
 logging:
-  path: logs
-  file: logs/${spring.cloud.client.ip-address}/config-server.log
   level:
     root: INFO
+  file:
+    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
+    path: logs
 spring:
   application:
       name: config-server #指定服务名称

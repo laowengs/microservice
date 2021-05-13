@@ -1,10 +1,11 @@
 server:
   port: 18002 #指定运行端口
 logging:
-  path: logs
-  file: logs/${spring.cloud.client.ip-address}/zuul-proxy.log
   level:
     root: INFO
+  file:
+    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
+    path: logs
 spring:
   application:
     name: zuul-proxy #指定服务名称
