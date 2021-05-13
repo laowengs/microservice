@@ -1,5 +1,5 @@
 server:
-  port: 8080 #指定运行端口
+  port: 18003 #指定运行端口
 logging:
   level:
     root: INFO
@@ -26,7 +26,7 @@ eureka:
     fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
     register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
     service-url:
-      defaultZone: http://wengjp:wengjp123@134.175.56.208:9001/eureka,http://wengjp:wengjp123@134.175.56.208:9002/eureka,http://wengjp:wengjp123@134.175.56.208:9003/eureka
+      defaultZone: http://wengjp:wengjp123@wengjp.local:9001/eureka
 turbine:
   app-config: EUREKA-CLIENT
   cluster-name-expression: new String('default') #指定服务所属集群

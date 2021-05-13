@@ -1,5 +1,5 @@
 server:
-  port: 9004 #指定运行端口
+  port: 18004 #指定运行端口
 logging:
   file:
     name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
@@ -17,27 +17,6 @@ spring:
     check-template-location: true
     mode: HTML
     suffix: .html
-  cloud:
-    nacos:
-      discovery:
-        server-addr: wengjp.local:8848
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: product-service
-          uri: lb://product-service
-          predicates:
-            - Path=/product/**
-        - id: account-service
-          uri: lb://account-service
-          predicates:
-            - Path=/account/**
-        - id: order-service
-          uri: lb://order-service
-          predicates:
-            - Path=/order/**
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址
