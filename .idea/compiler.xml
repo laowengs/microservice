@@ -9,6 +9,7 @@
         <module name="zuul-proxy" />
         <module name="config-server" />
         <module name="gateway-proxy" />
+        <module name="eureka-client" />
         <module name="eureka-server" />
         <module name="hystrix-dashboard" />
       </profile>

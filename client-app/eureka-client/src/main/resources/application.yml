@@ -1,5 +1,5 @@
 server:
-  port: 18003 #指定运行端口
+  port: 19001 #指定运行端口
 logging:
   level:
     root: INFO
@@ -8,10 +8,10 @@ logging:
     path: logs
 spring:
   application:
-    name: hystrix-dashboard #指定服务名称
+    name: eureka-client #指定服务名称
   thymeleaf:
     enabled: true
-    cache: true
+    cache: false
     encoding: UTF-8
     prefix: classpath:/templates/
     check-template-location: true
@@ -22,21 +22,18 @@ eureka:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+    metadata-map:
+      version: "@project.version@"
   client:
     fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
     register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
     service-url:
       defaultZone: http://wengjp:wengjp123@wengjp.local:9001/eureka
-turbine:
-  app-config: EUREKA-CLIENT
-  cluster-name-expression: new String('default') #指定服务所属集群
-  combine-host-port: true #以主机名和端口号来区分服务
 management:
   endpoints:
     web:
       exposure:
-        include:
-          - '*'
+        include: "*"
   endpoint:
     health:
       show-details: always

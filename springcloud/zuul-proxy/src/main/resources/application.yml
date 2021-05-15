@@ -20,7 +20,7 @@ spring:
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址
-    instance-id:  ${spring.cloud.client.ip-address} :${server.port}
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
     metadata-map:
       version: v1
