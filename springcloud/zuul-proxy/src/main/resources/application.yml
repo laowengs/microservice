@@ -2,7 +2,7 @@ server:
   port: 18002 #指定运行端口
 logging:
   level:
-    root: INFO
+    root: DEBUG
   file:
     name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
     path: logs
@@ -40,6 +40,7 @@ management:
 zuul:
   add-host-header: false #设置为true重定向是会添加host请求头
   prefix: /access #路由前缀
+  sensitive-headers:
 hystrix:
   command: #用于控制HystrixCommand的行为
     default:

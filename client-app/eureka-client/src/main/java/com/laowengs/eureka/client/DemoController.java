@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("demo")
 public class DemoController {
@@ -26,12 +28,13 @@ public class DemoController {
     @RequestMapping("demo")
     @ResponseBody
     @HystrixCommand(fallbackMethod = "fallback")
-    public String demo(){
+    public String demo(HttpServletRequest httpServletRequest){
+        System.out.println(httpServletRequest.getHeader("Authorization"));
         logger.info("call demo/demo");
         return "demo";
     }
 
-    public String fallback(){
+    public String fallback(HttpServletRequest httpServletRequest){
         return "fallback";
     }
 

@@ -1,10 +1,8 @@
 package com.laowengs.zuul;
 
-import com.netflix.hystrix.strategy.concurrency.HystrixRequestVariableDefault;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -17,7 +15,7 @@ import java.util.Map;
 
 @Component
 public class PreLogFilter extends ZuulFilter {
-    private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public String filterType() {
@@ -45,7 +43,7 @@ public class PreLogFilter extends ZuulFilter {
 
         Map<String,String> headerMap = new HashMap<>();
         Enumeration<String> headerNames = request.getHeaderNames();
-        if(headerNames.hasMoreElements()){
+        while (headerNames.hasMoreElements()){
             String key = headerNames.nextElement().toLowerCase();
             headerMap.put(key,request.getHeader(key));
         }
@@ -54,7 +52,7 @@ public class PreLogFilter extends ZuulFilter {
             version = "v1";
         }
         GrayHolder.setVersion(version);
-        LOGGER.info("Remote host:{},method:{},uri:{},parameterMap {},header {}", host, method, uri,parameterMap,headerMap);
+        logger.info("Remote host:{},method:{},uri:{},parameterMap {},header {}", host, method, uri,parameterMap,headerMap);
         return null;
     }
 }

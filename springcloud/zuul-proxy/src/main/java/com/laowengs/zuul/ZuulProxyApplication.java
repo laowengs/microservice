@@ -15,6 +15,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,7 @@ import java.util.Map;
 @SpringBootApplication
 @RestController
 @RibbonClient(name = "*",configuration= ZuulProxyApplication.ConfigBean.class)
+@ComponentScan("com.laowengs")
 public class ZuulProxyApplication implements DisposableBean {
 
     private static final Logger logger = LoggerFactory.getLogger(ZuulProxyApplication.class);

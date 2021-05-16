@@ -2,7 +2,7 @@ server:
   port: 19001 #指定运行端口
 logging:
   level:
-    root: INFO
+    root: debug
   file:
     name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
     path: logs

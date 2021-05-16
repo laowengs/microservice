@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zuul-proxy" />
+        <module name="micro-security" />
         <module name="config-server" />
-        <module name="gateway-proxy" />
         <module name="eureka-client" />
-        <module name="eureka-server" />
         <module name="hystrix-dashboard" />
+        <module name="zuul-proxy" />
+        <module name="gateway-proxy" />
+        <module name="eureka-server" />
+        <module name="micro-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

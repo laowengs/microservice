@@ -12,6 +12,8 @@
         <module>springcloud</module>
         <module>springcloud-alibaba</module>
         <module>client-app</module>
+        <module>micro-common</module>
+        <module>micro-common/micro-security</module>
     </modules>
 
     <properties>
