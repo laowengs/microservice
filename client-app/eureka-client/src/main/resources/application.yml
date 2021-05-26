@@ -17,10 +17,10 @@ spring:
     check-template-location: true
     mode: HTML
     suffix: .html
-  boot:
-    admin:
-      client:
-        url: http://127.0.0.1:18006
+#  boot:
+#    admin:
+#      client:
+#        url: http://127.0.0.1:18006
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址
@@ -29,10 +29,10 @@ eureka:
     metadata-map:
       version: "@project.version@"
   client:
-    fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
-    register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
+    fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
+    register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
     service-url:
-      defaultZone: http://wengjp:wengjp123@wengjp.local:9001/eureka
+      defaultZone: http://admin:123@127.0.0.1:18001/eureka
 management:
   endpoints:
     web:
