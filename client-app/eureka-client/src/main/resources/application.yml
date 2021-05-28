@@ -1,11 +1,11 @@
 server:
   port: 19001 #指定运行端口
-#logging:
-#  level:
-#    root: DEBUG
-#  file:
-#    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
-#    path: logs
+logging:
+  level:
+    root: DEBUG
+  file:
+    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
+    path: logs
 spring:
   application:
     name: eureka-client #指定服务名称
@@ -17,10 +17,14 @@ spring:
     check-template-location: true
     mode: HTML
     suffix: .html
-#  boot:
-#    admin:
-#      client:
-#        url: http://127.0.0.1:18006
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:18081
+        password: user
+        username: 123
+        instance:
+          name: CLIENT
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址

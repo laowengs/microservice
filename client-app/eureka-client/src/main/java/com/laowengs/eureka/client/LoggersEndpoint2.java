@@ -16,28 +16,16 @@
 
 package com.laowengs.eureka.client;
 
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.boot.actuate.logging.LoggersEndpoint;
+import org.springframework.boot.logging.LoggerConfiguration;
+import org.springframework.boot.logging.logback.LogbackLoggingSystem;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.NavigableSet;
-import java.util.Set;
-import java.util.TreeSet;
-
-import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
-import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
-import org.springframework.boot.actuate.endpoint.annotation.Selector;
-import org.springframework.boot.actuate.endpoint.annotation.WriteOperation;
-import org.springframework.boot.actuate.logging.LoggersEndpoint;
-import org.springframework.boot.logging.LogLevel;
-import org.springframework.boot.logging.LoggerConfiguration;
-import org.springframework.boot.logging.LoggerGroup;
-import org.springframework.boot.logging.LoggerGroups;
-import org.springframework.boot.logging.LoggingSystem;
-import org.springframework.boot.logging.logback.LogbackLoggingSystem;
-import org.springframework.lang.Nullable;
-import org.springframework.util.Assert;
 
 /**
  * {@link Endpoint @Endpoint} to expose a collection of {@link LoggerConfiguration}s.
@@ -50,27 +38,6 @@ import org.springframework.util.Assert;
 @Endpoint(id = "loggers2")
 public class LoggersEndpoint2 {
 
-	LogbackLoggingSystem logbackLoggingSystem = new LogbackLoggingSystem(LoggersEndpoint2.class.getClassLoader());
-
-	@ReadOperation
-	public Map<String, Object> loggers2() {
-		Collection<LoggerConfiguration> configurations = logbackLoggingSystem.getLoggerConfigurations();
-		if (configurations == null) {
-			return Collections.emptyMap();
-		}
-		Map<String, Object> result = new LinkedHashMap<>();
-		result.put("levels", logbackLoggingSystem.getSupportedLogLevels());
-		result.put("loggers", getLoggers(configurations));
-		result.put("groups", "getGroups()");
-		return result;
-	}
-	private Map<String, LoggersEndpoint.LoggerLevels> getLoggers(Collection<LoggerConfiguration> configurations) {
-		Map<String, LoggersEndpoint.LoggerLevels> loggers = new LinkedHashMap<>(configurations.size());
-		for (LoggerConfiguration configuration : configurations) {
-			loggers.put(configuration.getName(), new LoggersEndpoint.SingleLoggerLevels(configuration));
-		}
-		return loggers;
-	}
 
 
 
