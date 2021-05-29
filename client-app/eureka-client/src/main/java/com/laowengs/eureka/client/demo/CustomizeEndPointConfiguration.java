@@ -1,4 +1,4 @@
-package com.laowengs.eureka.client;
+package com.laowengs.eureka.client.demo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class CustomizeEndPointConfiguration {
 
     @Bean
-    public LoggersEndpoint2 loggersEndpoint2() {
-        return new LoggersEndpoint2();
+    public DemoEndpoint demoEndpoint() {
+        return new DemoEndpoint();
     }
 }

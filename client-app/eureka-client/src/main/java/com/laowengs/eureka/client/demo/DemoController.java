@@ -1,4 +1,4 @@
-package com.laowengs.eureka.client;
+package com.laowengs.eureka.client.demo;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;

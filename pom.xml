@@ -14,10 +14,12 @@
         <module>client-app</module>
         <module>micro-common</module>
         <module>micro-common/micro-security</module>
+        <module>micro-common/micro-api</module>
+        <module>micro-common/micro-logger</module>
     </modules>
 
     <properties>
-        <project.version>1.8</project.version>
+        <project.version>0.0.1</project.version>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <spring-boot-dependencies.version>2.3.7.RELEASE</spring-boot-dependencies.version>
@@ -27,6 +29,11 @@
         <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
         <attoparser.version>2.0.5.RELEASE</attoparser.version>
         <unbescape.version>1.1.6.RELEASE</unbescape.version>
+        <junit.version>5.7.2</junit.version>
+        <log4j.version>2.14.0</log4j.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <spring-boot-admin-starter-client.version>2.3.1</spring-boot-admin-starter-client.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -77,6 +84,50 @@
                 <artifactId>jedis</artifactId>
                 <version>${jedis.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin-starter-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
 
         </dependencies>
 

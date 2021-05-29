@@ -1,4 +1,4 @@
-package com.laowengs.eureka.client;
+package com.laowengs.eureka.client.demo;
 
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;

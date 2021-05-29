@@ -1,4 +1,4 @@
-package com.laowengs.eureka.client;
+package com.laowengs.eureka.client.demo;
 
 import org.springframework.boot.actuate.info.Info;
 import org.springframework.boot.actuate.info.InfoContributor;

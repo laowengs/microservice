@@ -1,11 +1,11 @@
 server:
   port: 19001 #指定运行端口
-logging:
-  level:
-    root: DEBUG
-  file:
-    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
-    path: logs
+#logging:
+#  level:
+#    root: DEBUG
+#  file:
+#    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
+#    path: logs
 spring:
   application:
     name: eureka-client #指定服务名称

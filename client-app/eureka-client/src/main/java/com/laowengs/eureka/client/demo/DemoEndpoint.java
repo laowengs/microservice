@@ -14,18 +14,10 @@
  * limitations under the License.
  */
 
-package com.laowengs.eureka.client;
+package com.laowengs.eureka.client.demo;
 
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
-import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
-import org.springframework.boot.actuate.logging.LoggersEndpoint;
 import org.springframework.boot.logging.LoggerConfiguration;
-import org.springframework.boot.logging.logback.LogbackLoggingSystem;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 /**
  * {@link Endpoint @Endpoint} to expose a collection of {@link LoggerConfiguration}s.
@@ -35,8 +27,8 @@ import java.util.Map;
  * @author HaiTao Zhang
  * @since 2.0.0
  */
-@Endpoint(id = "loggers2")
-public class LoggersEndpoint2 {
+@Endpoint(id = "demo")
+public class DemoEndpoint {
 
 
 

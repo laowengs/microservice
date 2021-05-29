@@ -8,10 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="micro-security" />
         <module name="config-server" />
+        <module name="micro-api" />
         <module name="eureka-client" />
         <module name="hystrix-dashboard" />
         <module name="zuul-proxy" />
         <module name="gateway-proxy" />
+        <module name="micro-logger" />
+        <module name="spring-admin" />
         <module name="eureka-server" />
         <module name="micro-common" />
       </profile>
