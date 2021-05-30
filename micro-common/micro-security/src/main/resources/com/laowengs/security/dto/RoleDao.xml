@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laowengs.security.dto.RoleDao">
+  <resultMap id="BaseResultMap" type="com.laowengs.security.po.Role">
+    <id column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="name_desc" jdbcType="VARCHAR" property="nameDesc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    role_id, role_name, name_desc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from role
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from role
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="role_id" keyProperty="roleId" parameterType="com.laowengs.security.po.Role" useGeneratedKeys="true">
+    insert into role (role_name, name_desc)
+    values (#{roleName,jdbcType=VARCHAR}, #{nameDesc,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="role_id" keyProperty="roleId" parameterType="com.laowengs.security.po.Role" useGeneratedKeys="true">
+    insert into role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleName != null">
+        role_name,
+      </if>
+      <if test="nameDesc != null">
+        name_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameDesc != null">
+        #{nameDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.laowengs.security.po.Role">
+    update role
+    <set>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameDesc != null">
+        name_desc = #{nameDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.laowengs.security.po.Role">
+    update role
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      name_desc = #{nameDesc,jdbcType=VARCHAR}
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </update>
+</mapper>

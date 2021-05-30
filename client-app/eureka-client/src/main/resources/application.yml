@@ -25,6 +25,12 @@ spring:
         username: 123
         instance:
           name: CLIENT
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://wengjp.local:3306/securitydb?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: security
+    password: security.1qaz
+
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址

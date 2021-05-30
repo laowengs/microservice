@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laowengs.security.dto.MenuDao">
+  <resultMap id="BaseResultMap" type="com.laowengs.security.po.Menu">
+    <id column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    menu_id, `path`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from menu
+    where menu_id = #{menuId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from menu
+    where menu_id = #{menuId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="menu_id" keyProperty="menuId" parameterType="com.laowengs.security.po.Menu" useGeneratedKeys="true">
+    insert into menu (`path`)
+    values (#{path,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="menu_id" keyProperty="menuId" parameterType="com.laowengs.security.po.Menu" useGeneratedKeys="true">
+    insert into menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="path != null">
+        `path`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.laowengs.security.po.Menu">
+    update menu
+    <set>
+      <if test="path != null">
+        `path` = #{path,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.laowengs.security.po.Menu">
+    update menu
+    set `path` = #{path,jdbcType=VARCHAR}
+    where menu_id = #{menuId,jdbcType=BIGINT}
+  </update>
+</mapper>

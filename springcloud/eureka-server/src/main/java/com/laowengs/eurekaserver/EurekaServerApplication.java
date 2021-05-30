@@ -1,6 +1,6 @@
 package com.laowengs.eurekaserver;
 
-import com.laowengs.WebSecurityConfig;
+import com.laowengs.security.WebSecurityConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;

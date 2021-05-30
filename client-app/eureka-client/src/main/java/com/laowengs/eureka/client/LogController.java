@@ -1,11 +1,13 @@
 package com.laowengs.eureka.client;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.logging.LoggerConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Comparator;
 
@@ -18,8 +20,12 @@ public class LogController {
             "ROOT");
 
     @RequestMapping("/level")
-    public void demo(String name,String level){
-
+    @ResponseBody
+    public String demo(String name,String level){
+        if(StringUtils.isBlank(name)){
+            throw new IllegalArgumentException("name is null");
+        }
+        return "name";
     }
 
 
