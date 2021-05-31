@@ -60,4 +60,10 @@
       role_id = #{roleId,jdbcType=BIGINT}
     where menu_role_id = #{menuRoleId,jdbcType=BIGINT}
   </update>
+  <select id="selectByMenuId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from menu_role
+    where menu_id = #{menuId,jdbcType=BIGINT}
+  </select>
 </mapper>

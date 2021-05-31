@@ -49,4 +49,10 @@
     set `path` = #{path,jdbcType=VARCHAR}
     where menu_id = #{menuId,jdbcType=BIGINT}
   </update>
+
+  <select id="getAllMenus" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from menu
+  </select>
 </mapper>

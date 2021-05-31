@@ -2,6 +2,8 @@ package com.laowengs.security.dto;
 
 import com.laowengs.security.po.Menu;
 
+import java.util.List;
+
 public interface MenuDao {
     int deleteByPrimaryKey(Long menuId);
 
@@ -14,4 +16,6 @@ public interface MenuDao {
     int updateByPrimaryKeySelective(Menu record);
 
     int updateByPrimaryKey(Menu record);
+
+    List<Menu> getAllMenus();
 }

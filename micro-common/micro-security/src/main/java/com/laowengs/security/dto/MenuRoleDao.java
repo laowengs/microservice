@@ -2,6 +2,8 @@ package com.laowengs.security.dto;
 
 import com.laowengs.security.po.MenuRole;
 
+import java.util.List;
+
 public interface MenuRoleDao {
     int deleteByPrimaryKey(Long menuRoleId);
 
@@ -14,4 +16,6 @@ public interface MenuRoleDao {
     int updateByPrimaryKeySelective(MenuRole record);
 
     int updateByPrimaryKey(MenuRole record);
+
+    List<MenuRole> selectByMenuId(Long menuId);
 }
