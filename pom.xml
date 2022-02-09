@@ -16,6 +16,7 @@
         <module>micro-common/micro-security</module>
         <module>micro-common/micro-api</module>
         <module>micro-common/micro-logger</module>
+        <module>nacos-client</module>
     </modules>
 
     <properties>

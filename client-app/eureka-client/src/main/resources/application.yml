@@ -20,11 +20,11 @@ spring:
   boot:
     admin:
       client:
-        url: http://127.0.0.1:18081
+        url: http://192.168.14.18:30081
         password: user
         username: 123
         instance:
-          name: CLIENT
+          prefer-ip: true
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://wengjp.local:3306/securitydb?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
