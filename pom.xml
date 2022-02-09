@@ -13,10 +13,7 @@
         <module>springcloud-alibaba</module>
         <module>client-app</module>
         <module>micro-common</module>
-        <module>micro-common/micro-security</module>
-        <module>micro-common/micro-api</module>
-        <module>micro-common/micro-logger</module>
-        <module>nacos-client</module>
+
     </modules>
 
     <properties>
@@ -138,7 +135,10 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            </dependency>
 
         </dependencies>
 

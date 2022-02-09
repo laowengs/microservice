@@ -10,7 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>micro-common</artifactId>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>micro-security</module>
+        <module>micro-api</module>
+        <module>micro-logger</module>
+    </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
