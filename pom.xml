@@ -13,6 +13,7 @@
         <module>springcloud-alibaba</module>
         <module>client-app</module>
         <module>micro-common</module>
+        <module>springcloud-alibaba/gateway-nacos-proxy</module>
 
     </modules>
 
