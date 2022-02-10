@@ -2,7 +2,7 @@ server:
   port: 18001 #指定运行端口
 logging:
   level:
-    root: INFO
+    root: WARN
   file:
     name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
     path: logs
@@ -16,15 +16,15 @@ eureka:
   client:
     fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
     register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
-    service-url:
-      defaultZone: http://admin:123@127.0.0.1:18001/eureka
+#    service-url:
+#      defaultZone: http://admin:123@127.0.0.1:18001/eureka
   server:
     enable-self-preservation: false  #保护模式是否开启
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: always
