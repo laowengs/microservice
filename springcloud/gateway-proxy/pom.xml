@@ -3,9 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>springcloud</artifactId>
         <groupId>com.laowengs</groupId>
-        <version>${project.version}</version>
+        <artifactId>springcloud-netflix-dependencies</artifactId>
+        <version>0.0.1</version>
+        <relativePath>../../micro-common/springcloud-netflix-dependencies/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
