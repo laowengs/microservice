@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.laowengs</groupId>
-        <artifactId>springcloud-netflix-dependencies</artifactId>
+        <artifactId>springcloud</artifactId>
         <version>0.0.1</version>
         <relativePath>../../micro-common/springcloud-netflix-dependencies/pom.xml</relativePath>
     </parent>
