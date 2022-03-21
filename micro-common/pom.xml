@@ -17,6 +17,7 @@
         <module>micro-api</module>
         <module>micro-logger</module>
         <module>springcloud-netflix-dependencies</module>
+        <module>springcloud-alibaba-dependencies</module>
     </modules>
 
     <properties>

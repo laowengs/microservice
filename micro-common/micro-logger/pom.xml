@@ -5,7 +5,7 @@
     <parent>
         <artifactId>microservice</artifactId>
         <groupId>com.laowengs</groupId>
-        <version>${project.version}</version>
+        <version>0.0.1</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
