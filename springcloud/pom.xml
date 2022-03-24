@@ -16,6 +16,7 @@
         <module>hystrix-dashboard</module>
         <module>gateway-proxy</module>
         <module>spring-admin</module>
+        <module>feign-service</module>
     </modules>
     <artifactId>springcloud</artifactId>
 
@@ -31,6 +32,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.7.RELEASE</version>
             </plugin>
         </plugins>
     </build>
