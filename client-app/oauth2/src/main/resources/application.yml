@@ -8,7 +8,7 @@ logging:
     path: logs
 spring:
   application:
-    name: nacos-client #指定服务名称
+    name: security-oauth2 #指定服务名称
   thymeleaf:
     enabled: true
     cache: false
