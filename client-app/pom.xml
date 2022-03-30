@@ -12,6 +12,7 @@
     <modules>
         <module>eureka-client</module>
         <module>nacos-client</module>
+        <module>oauth2</module>
     </modules>
     <artifactId>client-app</artifactId>
 
