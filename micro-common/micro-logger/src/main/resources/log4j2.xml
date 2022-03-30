@@ -41,7 +41,7 @@
     <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
     <loggers>
         <!-- Root节点用来指定项目的根日志，如果没有单独指定Logger，那么就会默认使用该Root日志输出 -->
-        <root level="DEBUG">
+        <root level="WARN">
             <appender-ref ref="Console"/>
             <appender-ref ref="RollingFile"/>
         </root>
@@ -49,6 +49,10 @@
            <appender-ref ref="Console"/>
            <appender-ref ref="RollingFile"/>
        </logger>
+        <logger name="feign" level="DEBUG">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+        </logger>
         <!--AsyncLogger :异步日志,LOG4J有三种日志模式,全异步日志,混合模式,同步日志,性能从高到底,线程越多效率越高,也可以避免日志卡死线程情况发生-->
         <!--additivity="false" : additivity设置事件是否在root logger输出，为了避免重复输出，可以在Logger 标签下设置additivity为”false”-->
 <!--        <AsyncLogger name="AsyncLogger" level="trace" includeLocation="true" additivity="false">-->

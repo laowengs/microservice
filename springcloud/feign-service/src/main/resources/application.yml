@@ -1,0 +1,53 @@
+server:
+  port: 19002 #指定运行端口
+#logging:
+#  level:
+#    root: DEBUG
+#  file:
+#    name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
+#    path: logs
+spring:
+  application:
+    name: feign-service #指定服务名称
+  thymeleaf:
+    enabled: true
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    check-template-location: true
+    mode: HTML
+    suffix: .html
+#  boot:
+#    admin:
+#      client:
+#        url: http://127.0.0.1:18081
+#        password: user
+#        username: 123
+#        instance:
+#          name: CLIENT
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://wengjp.local:3306/securitydb?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: security
+    password: security.1qaz
+
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.ip-address}  #指定主机地址
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+    metadata-map:
+      version: "@project.version@"
+  client:
+    fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
+    register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
+    service-url:
+      defaultZone: http://admin:123@127.0.0.1:18001/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
