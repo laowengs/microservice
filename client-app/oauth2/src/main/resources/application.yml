@@ -2,7 +2,7 @@ server:
   port: 19005 #指定运行端口
 logging:
   level:
-    root: INFO
+    root: DEBUG
   file:
     name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
     path: logs
@@ -26,6 +26,11 @@ spring:
         group: CLIENT
         namespace: public
         enabled: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://wengjp.vm1:3306/securitydb?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: security
+    password: security.1qaz
 
 #  boot:
 #    admin:
