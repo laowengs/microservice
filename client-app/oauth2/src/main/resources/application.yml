@@ -1,5 +1,5 @@
 server:
-  port: 19003 #指定运行端口
+  port: 19005 #指定运行端口
 logging:
   level:
     root: DEBUG
@@ -8,7 +8,7 @@ logging:
     path: logs
 spring:
   application:
-    name: nacos-client #指定服务名称
+    name: security-oauth2 #指定服务名称
   thymeleaf:
     enabled: true
     cache: false
@@ -26,6 +26,11 @@ spring:
         group: CLIENT
         namespace: public
         enabled: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://wengjp.vm1:3306/securitydb?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: security
+    password: security.1qaz
 
 #  boot:
 #    admin:
